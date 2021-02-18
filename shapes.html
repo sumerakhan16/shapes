@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var output= "";
+var output2= "";
+var output3= "";
+var output4= "";
+var output5= "";
+var output6= "";
+
+console.log("Task A: Box");
+var width = prompt("Enter the rectangle width");
+var height = prompt("Enter the rectangle height");
+for (let i = 0; i < height; i++){
+    for (let j = 0; j < width; j++){
+        output += "*";
+    }
+    output += "\n";   
+}
+console.log(output)
+
+console.log("Task B: Checkerboard");
+var width2 = prompt("Enter checkerboard width");
+var height2 = prompt("Enter checkerboard height");
+var star = true;
+for (let i = 0; i < height2; i++){
+    for (let j = 0; j < width2; j++){
+       if(star) {
+        output2 += "*";
+       }
+       else {
+        output2 += " ";
+       }
+       star = !star;
+    }
+    output2 += "\n";  
+}
+console.log(output2);
+
+console.log("Task C: Cross");
+var height3 = prompt("Enter cross height as 8");
+for(let i = 0; i < height3; i++){
+    for(let j = 0; j < height3; j++){
+        if(j == i || j == height3 - i - 1){
+            output3 +="*";
+        } else {
+            output3 +=" ";
+        }
+    }
+    output3 +="\n";
+}
+console.log(output3);
+
+console.log("Task D : Lower Triangle");
+var height4 = prompt("Enter Lower triangle side length:");
+for(var i = 0; i < height4; i++){
+    for (let j = 0; j < height4; j++){
+        if(j <= i){
+            output4 += "*";
+        }else {
+            output4 += " ";
+        }
+    }
+    output4+= "\n";
+ }
+ console.log(output4); 
+
+ 
+console.log("Task E : Upper Triangle");
+var height5 = prompt("Enter Upper triangle side length:");
+for(var i = 0; i < height5; i++){
+    for (let j = 0; j < height5; j++){
+        if(j >= i){
+            output5 += "*";
+        }else {
+            output5 += " ";
+        }
+    }
+    output5+= "\n";
+ }
+ console.log(output5);
+
+console.log("Task F: Trapezoid");
+var width6 = prompt("Please enter the trapezoid width");
+var height6 = prompt("Please enter the trapezoid height");
+var spaces = 0;
+var stars = width6;
+
+if (parseInt(height6) > (parseInt(width6) / 2)) {
+    throw 'Impossible Shape!';
+}
+
+for (var i = 1; i <= height6; i++) {
+    var spaceCounter = spaces;
+    var starCounter = stars;
+
+    while (spaceCounter > 0) {
+        output6 += " ";
+        spaceCounter--;
+    }
+    while (starCounter > 0) {
+        output6 += "*";
+        starCounter--;
+    }
+
+    spaces += 1;
+    stars -= 2;
+    output6 += "\n";
+}
+console.log(output6);
+    </script>
+    
+</body>
+</html>
